@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo académico de SIAR S.A.S. para comunicación residencial.">
+  <title>SIAR S.A.S. | Administración residencial</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="marca">
+      <div class="logo" aria-hidden="true">S</div>
+      <div>
+        <p class="sobretitulo">Sistema Integral de Administración Residencial</p>
+        <h1>SIAR <span>S.A.S.</span></h1>
+      </div>
+    </div>
+    <span class="etiqueta">Prototipo académico</span>
+  </header>
+
+  <main class="contenedor">
+    <section class="bienvenida">
+      <div>
+        <p class="sobretitulo">Comunicación clara, comunidad conectada</p>
+        <h2>Bienvenido a SIAR</h2>
+        <p>Consulta comunicados y registra solicitudes de tu unidad residencial desde un solo lugar.</p>
+      </div>
+      <div class="bienvenida-icono" aria-hidden="true">⌂</div>
+    </section>
+
+    <section class="resumen" aria-label="Resumen">
+      <article class="tarjeta-resumen">
+        <span class="resumen-icono">▤</span>
+        <div><p>Comunicados publicados</p><strong id="totalComunicados">0</strong></div>
+      </article>
+      <article class="tarjeta-resumen">
+        <span class="resumen-icono">✉</span>
+        <div><p>Solicitudes registradas</p><strong id="totalSolicitudes">0</strong></div>
+      </article>
+    </section>
+
+    <div class="columnas">
+      <section class="panel">
+        <div class="titulo-seccion">
+          <div><p class="sobretitulo">Información de la comunidad</p><h2>Comunicados</h2></div>
+          <span class="punto-verde" aria-hidden="true"></span>
+        </div>
+        <div id="listaComunicados" class="lista-comunicados" aria-live="polite"></div>
+      </section>
+
+      <section class="panel">
+        <div class="titulo-seccion">
+          <div><p class="sobretitulo">Estamos para ayudarte</p><h2>Registrar solicitud</h2></div>
+        </div>
+        <form id="formSolicitud">
+          <label for="nombre">Nombre del residente</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Ej. Ana Pérez" required maxlength="70">
+
+          <label for="tipo">Tipo de solicitud</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Selecciona una opción</option>
+            <option>Daño o mantenimiento</option>
+            <option>Convivencia</option>
+            <option>Seguridad</option>
+            <option>Reserva de zona común</option>
+            <option>Otra solicitud</option>
+          </select>
+
+          <label for="detalle">Descripción</label>
+          <textarea id="detalle" name="detalle" rows="4" placeholder="Describe brevemente tu solicitud" required maxlength="500"></textarea>
+
+          <button type="submit">Registrar solicitud</button>
+          <p id="mensajeFormulario" class="mensaje" role="status"></p>
+          <p class="nota">Demostración académica: los datos se guardan únicamente en este navegador.</p>
+        </form>
+      </section>
+    </div>
+
+    <section class="panel historial">
+      <div class="titulo-seccion">
+        <div><p class="sobretitulo">Seguimiento</p><h2>Solicitudes registradas en este navegador</h2></div>
+        <button id="limpiarSolicitudes" class="boton-secundario" type="button">Limpiar demo</button>
+      </div>
+      <div id="listaSolicitudes" class="lista-solicitudes" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>SIAR S.A.S.</strong> · Proyecto académico del programa Análisis y Desarrollo de Software.</p>
+    <p>Versión inicial · Medellín, Antioquia</p>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
